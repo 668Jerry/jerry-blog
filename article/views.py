@@ -48,7 +48,6 @@ def detail(request, pk):
 def create(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
-        return HttpResponseRedirect('/article/1')
         if form.is_valid():
             new_article = form.save()
             return HttpResponseRedirect('/article/' + str(new_article.pk))
