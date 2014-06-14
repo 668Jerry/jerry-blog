@@ -54,5 +54,6 @@ def create(request):
             return HttpResponseRedirect('/article/' + str(new_article.pk))
         else:
             return HttpResponseRedirect('/article/1')
-    form = ArticleForm()
-    return render(request, 'create_article.html', {'form': form})
+    else:
+        form = ArticleForm()
+        return render(request, 'create_article.html', {'form': form,})
